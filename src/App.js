@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import {Header} from "./components/Header/Header";
+import {Layout} from "./components/Layout/Layout";
+import {Footer} from "./components/Footer/Footer";
+import bg1 from "./resourses/images/bg1.jpg"
+import bg2 from "./resourses/images/bg2.jpg"
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Header />
+        <Layout urlBg={bg1} />
+        <Layout colorBg={"#673273"} />
+        <Layout urlBg={bg2} />
+        <Footer />
     </div>
   );
 }
