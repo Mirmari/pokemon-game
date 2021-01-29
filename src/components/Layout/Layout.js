@@ -4,23 +4,18 @@ import styles from "./Layout.module.css";
 export const Layout = ({
    id,
    title = 'title',
-   descr = 'descr',
    urlBg,
-   colorBg
+   colorBg,
+   children
 }) => {
-    const resolveBg = () => {
-        let background = 'none'
-        if (urlBg) {
-            background = `url(${urlBg})`;
-        }
-        if (colorBg) {
-            background = colorBg
-        }
-        return background
-    }
-
     return (
-        <section style={{background: resolveBg()}} className={styles.root} id={id}>
+        <section
+            className={styles.root}
+            id={id}
+            style={{
+            backgroundColor: colorBg ?? '',
+            backgroundImage: `url(${urlBg})` ?? '',
+        }}>
             <div className={styles.wrapper}>
                 <article>
                     <div className={styles.title}>
@@ -28,7 +23,7 @@ export const Layout = ({
                         <span className={styles.separator}></span>
                     </div>
                     <div className={`${styles.desc} ${styles.full}`}>
-                        <p>{descr}</p>
+                        <p>{children}</p>
                     </div>
                 </article>
             </div>
