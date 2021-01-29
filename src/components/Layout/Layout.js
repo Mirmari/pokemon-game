@@ -23,7 +23,7 @@ export const Layout = ({
                         <span className={styles.separator}></span>
                     </div>
                     <div className={`${styles.desc} ${styles.full}`}>
-                        <p>{children}</p>
+                        {children}
                     </div>
                 </article>
             </div>
