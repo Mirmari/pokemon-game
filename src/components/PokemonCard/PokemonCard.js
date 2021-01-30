@@ -35,7 +35,7 @@ export const PokemonCard = ({name, img, id, type, values, ...props}) => {
                             <div className={styles.info}>
                                 <span className={styles.number}>{id}</span>
                                 <h3 className={styles.name}>{name}</h3>
-                                <small className={styles.type}>Type: <span>{type}</span></small>
+                                <small className={`${styles[type]}`}>Type: <span>{type}</span></small>
                             </div>
                         </div>
                     </div>
